@@ -1,17 +1,23 @@
+.container{
+	text-align: center;
+	font-family: 'roboto', sans-serif;
+}
+
+.price-card {
+	border : 1px solid #808080;
+	width : 220px;
+	display : inline-block;
+	padding: 40px 15px;
+	position: relative;
+	text-align: left;
+	margin-right: 10px;
+}
+
 .price-tag{
 	font-weight: bold;
 	font-size: 1.2em;
 }
 
-.price-card {
-	border : 1px solid #808080;
-	width : 250px;
-	display : inline-block;
-	/*height:400px;*/
-	padding: 40px 20px;
-	/*border-radius: 5px;*/
-	position: relative;
-}
 
 .price-cents {
 	font-size: 0.7em;
@@ -22,8 +28,9 @@
 
 li {
 	list-style-position:inside;
-	border-bottom: 1px dotted red;
 	list-style-type: none;
+	margin: 5px 0px;
+	line-height: 1.6em;
 }
 
 .fa-check {
@@ -34,17 +41,25 @@ li {
 	color:#ff8b5a;
 }
 
-hr {
+.hr-main {
 	border: none;
     height: 3px;
     background-color:#000;
+}
+
+.hr-li {
+	border: 1px dotted #c2c8d1;
+    height: 0px;
+    background-color:transparent;
+	position: relative;
+	left: -25px;
 }
 
 #triangle-topright {
 	width: 0;
 	height: 0;
 	position: absolute;
-	border-top: 80px solid green;
+	border-top: 80px solid #b4da47;
 	border-left: 80px solid transparent;
 	top: 0;
 	right: 0;
@@ -67,6 +82,23 @@ hr {
 	/* Opera */
 	-o-transform: rotate(45deg);
 }
+
+.btn-apply {
+	text-align: center;
+	background-color: #ff8611;
+	height: 35px;
+	width: 120px;
+	margin: 0 auto;
+}
+
+.btn-apply button{
+	font-size: 1.08em;
+	color: #fff;
+	border: none;
+	background: transparent;
+	margin: 6px 0px;
+}
+
 
 @media (max-width : 900px) {
 	.price-card {
