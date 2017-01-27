@@ -1,0 +1,11 @@
+.price-card{
+	border : 1px solid #808080;
+	width : 250px;
+	display : inline-block;
+}
+
+
+li{
+	list-style-position:inside;
+	border-bottom: 5px solid red;
+}
