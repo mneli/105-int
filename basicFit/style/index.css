@@ -1,11 +1,77 @@
-.price-card{
+.price-tag{
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.price-card {
 	border : 1px solid #808080;
 	width : 250px;
 	display : inline-block;
+	/*height:400px;*/
+	padding: 40px 20px;
+	/*border-radius: 5px;*/
+	position: relative;
 }
 
+.price-cents {
+	font-size: 0.7em;
+	position: relative;
+	bottom : 0.6em;
 
-li{
+}
+
+li {
 	list-style-position:inside;
-	border-bottom: 5px solid red;
+	border-bottom: 1px dotted red;
+	list-style-type: none;
+}
+
+.fa-check {
+	color: #b4dA47
+}
+
+.price-card-title {
+	color:#ff8b5a;
+}
+
+hr {
+	border: none;
+    height: 3px;
+    background-color:#000;
+}
+
+#triangle-topright {
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-top: 80px solid green;
+	border-left: 80px solid transparent;
+	top: 0;
+	right: 0;
+	z-index: 1;
+
+}
+
+.popular {
+	position: absolute;
+	color: #fff;
+	top: -80px;
+	right: 0px;
+	z-index: 10;
+	/* Safari */
+	-webkit-transform: rotate(45deg);
+	/* Firefox */
+	-moz-transform: rotate(45deg);
+	/* IE */
+	-ms-transform: rotate(45deg);
+	/* Opera */
+	-o-transform: rotate(45deg);
+}
+
+@media (max-width : 900px) {
+	.price-card {
+		width: 100%;
+	}			
+			
+		
 }
