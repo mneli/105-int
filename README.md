@@ -42,8 +42,8 @@
 	<p>
 		The file containing the email list would have an email+name on each line:<br>
 		<pre><code>
-		"John Doe <john.doe@example.com>"
-		"Alex Doe <alex.doe@example.com>"
+		"John Doe &lt;john.doe@example.com&gt;"
+		"Alex Doe &lt;alex.doe@example.com&gt;"
 		....
 		</code></pre>
 	</p>
