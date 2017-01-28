@@ -83,12 +83,20 @@ li {
 	-o-transform: rotate(45deg);
 }
 
+button:focus {	
+	 outline: none;
+}
+
 .btn-apply {
 	text-align: center;
 	background-color: #ff8611;
 	height: 35px;
 	width: 120px;
 	margin: 0 auto;
+}
+
+.btn-apply:hover {
+	background-color: #ee7500;
 }
 
 .btn-apply button{
@@ -102,7 +110,7 @@ li {
 
 @media (max-width : 900px) {
 	.price-card {
-		width: 100%;
+		width: 90%;
 	}			
 			
 		
