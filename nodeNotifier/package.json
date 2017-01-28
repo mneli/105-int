@@ -1,0 +1,27 @@
+{
+  "name": "node-notifier",
+  "version": "1.0.0",
+  "description": "A NodeJS script that can be invoked from the console with a list of emails, names and a message. The script sends a new email to each correspondent in the list, with the given message.",
+  "main": "notify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mneli/105-int.git"
+  },
+  "keywords": [
+    "nodemailer",
+    "node",
+    "email"
+  ],
+  "author": "mneli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mneli/105-int/issues"
+  },
+  "homepage": "https://github.com/mneli/105-int#readme",
+  "dependencies": {
+    "validator": "^6.2.1"
+  }
+}
