@@ -1,25 +1,38 @@
 const path = require('path');
 const fs = require('fs');
-// const validator = require('validator');
 
 module.exports = function (data) {
 
-	let emailListArr = [];
+	let emailList = [];
 
 	if (fs.existsSync(data[0])) {
-		emailListArr = fs.readFileSync(data[0]).toString().split("\n");
+		emailList = fs.readFileSync(data[0]).toString().split("\n");
 	} else {
 
-		emailListArr = data;
+		emailList = data;
 	}
-	emailListArr.forEach(function (elt, index, arr) {
-		arr[index] = elt.replace("\"", "").replace("\"", "");
+
+
+	emailList.forEach(function (elt, index, arr) {
+		arr[index] = elt.replace("\"", "").replace("\"", "").replace("<", "").replace(">", "").split(" ");
 	});
 
-	// 	if (!validator.isEmail(data[0].split(" ")[2].replace("<", "").replace(">", "")))
-	// });
+	let correctEmailList = [];
 
-	// console.log();
+	for (let i = 0; i < emailList.length; i++) {
+		if (emailList[i].length !== 3) {
+			fs.appendFile(
+				`./logs/input-errors.log`,
+				`[${new Date()}]
+				Wrong email format : <name> <surname> <email>(expected) ${emailList[i]}(received)\n`,
+				function (err) {
+					if (err) console.error(err);
+				});
+			console.error(`Wrong email format : <name> <surname> <email>(expected) ${emailList[i]}(received)`);
+		} else {
+			correctEmailList.push(emailList[i]);
+		}
+	}
 
-	return emailListArr;
+	return correctEmailList;
 };

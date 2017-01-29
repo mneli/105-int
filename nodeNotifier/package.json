@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/mneli/105-int#readme",
   "dependencies": {
+    "nodemailer": "^2.7.2",
     "validator": "^6.2.1"
   }
 }
