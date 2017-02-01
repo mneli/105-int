@@ -1,5 +1,41 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+	 min-width: 350px;
+	 font-family: sans-serif;
+}
+
+.container {
+	text-align: center;
+}
+
+.currency-box {
+	margin: 10px;
+	padding: 30px;
+	border : 1px solid #000;
+	width: 150px;
+	display: inline-block;
+	
+}
+
+.converter {
+	height: 250px;
+}
+
+.btn-back {
+	font-size: 1.3em;
+	margin: 0 auto;
+	width: 300px;
+	height: 50px;
+	border: 1px solid #000;
+	padding-top: 15px;
+}
+
+.valid-input {
+	font-weight: bold;
+}
+
+.invalid-input {
+	outline: none;
+	font-weight: bold;
+	color: #f00;;
+	border: 1px solid #f00;
 }
