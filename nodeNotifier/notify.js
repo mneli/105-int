@@ -15,4 +15,3 @@ emailSender(emailList, msg);
 
 
 // TODO: regex replace instead of multiple replace
-// TODO:check existance of log files and write before append
