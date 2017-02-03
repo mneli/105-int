@@ -48,3 +48,11 @@
 		</code></pre>
 	</p>
 </div>
+
+<div>
+	<h2>currencyConverter</h2>
+	<p>
+		A basic react app that converts CHF to 4 different currencies.
+		TODO : Take live exchange rate from an external api.
+	</p>
+</div>

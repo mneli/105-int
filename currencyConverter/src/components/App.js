@@ -65,16 +65,12 @@ class App extends Component {
 		switch (this.state.renderMode) {
 			case 'US-Dollar':
 				return this.renderConverter(1.00711);
-				break;
 			case 'EU-Euro':
 				return this.renderConverter(0.934918);
-				break;
 			case 'Japan-Yen':
 				return this.renderConverter(113.973);
-				break;
 			case 'UK-Pound':
 				return this.renderConverter(0.795517);
-				break;
 			default:
 				return this.renderDefault()
 		}
