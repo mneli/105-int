@@ -13,7 +13,7 @@
 		<div class="btn-container">
 			<div class="btn" onclick="handleBtnClick()">View pop-up</div>
 			<div id="popup-bg" class="overlay" onclick="handleOverlayClick()">
-				<div class="popup">
+				<div id="popup" class="popup">
 					<div class="close">x</div>
 					<div class="popup-txt">Are you sure you want to delete this element?</div>
 					<div class="popup-btn popup-btn-yes">Yes</div>
@@ -29,9 +29,14 @@
 <script>
 	function handleBtnClick(){
 		document.getElementById("popup-bg").style.display = "block" ;
+		window.setTimeout(animatePopup, 0);
 	}
 	function handleOverlayClick(){
 		document.getElementById("popup-bg").style.display = "none" ;
+		document.getElementById("popup").className = "popup";
+	}
+	function animatePopup(){
+		document.getElementById("popup").className += " animate";
 	}
 </script>
 

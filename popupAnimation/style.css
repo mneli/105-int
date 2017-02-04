@@ -24,6 +24,7 @@ body{
 	line-height: 50px;
 	position: relative;
 	top: 40px;
+	cursor: pointer;	
 }
 
 .btn:hover{
@@ -44,12 +45,17 @@ body{
 	height: 180px;
 	width: 400px;
 	position: relative;
-	top: 65px;
+	top: 30px;
 	background-color: white;
 	margin: 0 auto;
 	border-radius: 5px;
 	overflow: hidden;
-	white-space: nowrap;
+	transition: top 0.4s linear;
+}
+
+
+.popup.animate{
+	top: 65px;
 }
 
 .popup-txt{
