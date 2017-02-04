@@ -1,0 +1,100 @@
+body{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+	background-color: #f7d379;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+}
+
+.btn{
+	color:#fff;
+	text-transform: uppercase;
+	font-size: 1.02em;
+	background-color: #34c176;
+	height: 50px;
+	width: 200px;
+	margin: 0 auto;
+	border-radius:25px;
+	line-height: 50px;
+	position: relative;
+	top: 40px;
+}
+
+.btn:hover{
+	background-color: #42f486;
+}
+
+.overlay{
+	display: none;
+	background-color: rgba(136,137,140,0.9);
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.popup{
+	height: 180px;
+	width: 400px;
+	position: relative;
+	top: 65px;
+	background-color: white;
+	margin: 0 auto;
+	border-radius: 5px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.popup-txt{
+	font-size: 1.02em;
+	display: block;
+	height:65%;
+	color: grey;
+	line-height: 120px;
+}
+
+.popup-btn{
+	color:white;
+	text-transform: uppercase;
+	display: inline-block;
+	height: 35%;
+	width: 50%;
+	line-height: 60px;
+	cursor: pointer;
+}
+
+.popup-btn-yes{
+	background-color: #f00;
+	float: left;
+}
+
+.popup-btn-yes:hover{
+	background-color: #ff0040;
+}
+
+.popup-btn-no{
+	background-color: #98fb98;
+	float: right;
+}
+
+.popup-btn-no:hover{
+	background-color: #0f0;
+}
+
+.clear{
+	clear: both;
+}
+
+.close{
+	position: absolute;
+	right: 10px;
+	cursor: pointer;
+	font-size: 1.2em;
+}
