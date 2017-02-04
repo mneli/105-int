@@ -10,16 +10,25 @@
 
 <body>
 	<div class="container">
+
 		<div class="btn-container">
 			<div class="btn" onclick="handleBtnClick()">View pop-up</div>
-			<div id="popup-bg" class="overlay" onclick="handleOverlayClick()">
-				<div id="popup" class="popup">
-					<div class="close">x</div>
-					<div class="popup-txt">Are you sure you want to delete this element?</div>
-					<div class="popup-btn popup-btn-yes">Yes</div>
-					<div class="popup-btn popup-btn-no">No</div>
-					<div class="clear"></div>
-				</div>
+		</div>
+		<div class="select-container">
+			<select id="popup-type" name="popup-type">
+				<option value="a" selected="selected">Type A</option>
+				<option value="b">Type B</option>
+				<option value="c">Type C</option>
+			</select>	
+		</div>
+
+		<div id="popup-bg" class="overlay" onclick="handleOverlayClick()">
+			<div id="popup" class="popup">
+				<div class="close">x</div>
+				<div class="popup-txt">Are you sure you want to delete this element?</div>
+				<div class="popup-btn popup-btn-yes">Yes</div>
+				<div class="popup-btn popup-btn-no">No</div>
+				<div class="clear"></div>
 			</div>
 		</div>
 
@@ -27,16 +36,40 @@
 
 
 <script>
+	function handleSelect(){
+		let type = document.getElementById("popup-type").value;
+		switch(type){
+			case 'b':
+			document.getElementById("popup").className = "popup animation-b";
+			break;
+			case 'c':
+			document.getElementById("popup").className = "popup animation-c";
+			break;
+			default:
+			document.getElementById("popup").className = "popup animation-a";
+		}
+	}
 	function handleBtnClick(){
+		handleSelect();
 		document.getElementById("popup-bg").style.display = "block" ;
-		window.setTimeout(animatePopup, 0);
+		window.setTimeout(animatePopup, 10);
 	}
 	function handleOverlayClick(){
 		document.getElementById("popup-bg").style.display = "none" ;
 		document.getElementById("popup").className = "popup";
 	}
 	function animatePopup(){
-		document.getElementById("popup").className += " animate";
+		let type = document.getElementById("popup-type").value;
+		switch(type){
+			case 'b':
+			document.getElementById("popup").className += " animate-b";
+			break;
+			case 'c':
+			document.getElementById("popup").className += " animate-c";
+			break;
+			default:
+			document.getElementById("popup").className += " animate-a";
+		}
 	}
 </script>
 

@@ -20,10 +20,10 @@ body{
 	height: 50px;
 	width: 200px;
 	margin: 0 auto;
+	margin-top: 40px;
 	border-radius:25px;
 	line-height: 50px;
 	position: relative;
-	top: 40px;
 	cursor: pointer;	
 }
 
@@ -31,9 +31,28 @@ body{
 	background-color: #42f486;
 }
 
+.select-container{
+	margin-top: 30px;
+}
+
+
+select {
+    padding:3px;
+    margin: 0;
+    border-radius:4px;
+    box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    background: #f8f8f8;
+    color:#888;
+    outline:none;
+    display: inline-block;
+    cursor:pointer;
+}
+
+
+
 .overlay{
 	display: none;
-	background-color: rgba(136,137,140,0.9);
+	background-color: rgba(94, 110, 141,0.9);
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -50,12 +69,31 @@ body{
 	margin: 0 auto;
 	border-radius: 5px;
 	overflow: hidden;
-	transition: top 0.4s linear;
+	transition: all 0.4s linear;
 }
 
+.popup.animation-a{
+	top:20px;
+}
 
-.popup.animate{
+.popup.animation-b{
+	transform: scale(0);
+}
+
+.popup.animation-c{
+	border-radius: 100%;
+}
+
+.popup.animation-a.animate-a{
 	top: 65px;
+}
+
+.popup.animation-b.animate-b{
+	transform: scale(1);
+}
+
+.popup.animation-c.animate-c{
+	border-radius: 0%;
 }
 
 .popup-txt{
