@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Realtime Chat With NoSQL</title>
+    <style type="text/css">
+      #chatbox {height: 300px;overflow-y:scroll;border:solid 1px #000;margin:10px 0;}
+      #new-message {width: 100%;margin:10px 0;}
+    </style>
+  </head>
+  <body>
+    <h1>Let's chat!</h1>
+    <div>
+      <div id="chatbox">
+        <ul id="chat"></ul>
+      </div>
+      <div>
+        Username: <input id="username" value="john">
+      </div>
+      <div>
+        <textarea id="new-message" placeholder="Say what?" rows="2"></textarea>
+      </div>
+    </div>
+    <script type="text/javascript">
+      (function () {
+        var ENTER_KEY_CODE = 13
+        var WS_PTOCOL = window.location.protocol === 'http:' ? 'ws' : 'wss'
+        var WS_ENDPOINT = window.location.host
+        
+        // Initiate the WebSocket connection
+        var socket = new WebSocket(`${WS_PTOCOL}://${WS_ENDPOINT}`)
+        socket.onmessage = onMessageReceived
+
+        // Bind the "send message" event to the chat box
+        document.getElementById("new-message").onkeydown = onNewMessageWrite
+
+        // Load the message history from backend
+        loadMessageHistory()
+        
+        // Stringify messages before sending them through sockets
+        function sendMessage(text, user) {
+          var msg = {type: "message", text: text, user: user, time: Date.now()}
+          socket.send(JSON.stringify(msg))
+        }
+
+        // Process the received message
+        function onMessageReceived(event) {
+          var message = msg = JSON.parse(event.data)
+          switch(message.type) {
+            case "message":
+              addMessageToList(message)
+              break;
+          }
+        }
+
+        // Append a message to the message list DOM
+        function addMessageToList(message) {
+          var chatLine = document.createElement("li")
+          var date = new Date(message.time)
+          var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+          chatLine.innerText = message.user + " (" + time + "): " + message.text
+          document.getElementById("chat").appendChild(chatLine)
+          scrollChatbox()
+        }
+
+        // Triggered when a key is pressed on the chat box
+        // Send the message when the ENTER key is detected
+        function onNewMessageWrite(event) {
+          if (event.keyCode === ENTER_KEY_CODE) {
+            event.preventDefault()
+            sendMessage(getNewMessageText(), getUsername())
+            setNewMessageText("")
+          }
+        }
+
+        function getUsername() {
+          return document.getElementById("username").value
+        }
+
+        function getNewMessageText() {
+          return document.getElementById("new-message").value
+        }
+
+        function setNewMessageText(text) {
+          return document.getElementById("new-message").value = text
+        }
+
+        // Scrolls the chat message list to the bottom
+        function scrollChatbox(){
+          document.getElementById("chatbox").scrollTop = document.getElementById("chatbox").scrollTop + 1000
+        }
+
+        // Loads the messages from backend through an Ajax, Async request
+        // Adds the messages to the message list
+        // More info: https://developer.mozilla.org/en/docs/Web/API/Fetch_API
+        function loadMessageHistory() {
+          fetch("/messages")
+          .then((response)=> response.json())
+          .then((result)=> result.messages.forEach((message)=> addMessageToList(message)))
+        }
+      })()
+    </script>
+  </body>
+</html>

@@ -12,6 +12,7 @@ build
 .DS_Store
 .env
 env.js
+config.json
 npm-debug.log
 .vscode
 prepros*.config
