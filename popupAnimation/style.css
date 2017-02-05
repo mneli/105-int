@@ -69,19 +69,22 @@ select {
 	margin: 0 auto;
 	border-radius: 5px;
 	overflow: hidden;
-	transition: all 0.4s linear;
 }
 
 .popup.animation-a{
+	transition: all 0.4s ease;
 	top:20px;
 }
 
 .popup.animation-b{
+	transition: all 0.4s linear;
 	transform: scale(0);
 }
 
 .popup.animation-c{
-	border-radius: 100%;
+	transition: all 0.8s ease;
+	transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0;
 }
 
 .popup.animation-a.animate-a{
@@ -93,7 +96,8 @@ select {
 }
 
 .popup.animation-c.animate-c{
-	border-radius: 0%;
+	transform: none;
+    opacity: 1;
 }
 
 .popup-txt{
