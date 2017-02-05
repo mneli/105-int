@@ -64,7 +64,6 @@ select {
 	height: 180px;
 	width: 400px;
 	position: relative;
-	top: 30px;
 	background-color: white;
 	margin: 0 auto;
 	border-radius: 5px;
@@ -72,16 +71,18 @@ select {
 }
 
 .popup.animation-a{
+	top: 30px;
 	transition: all 0.4s ease;
-	top:20px;
 }
 
 .popup.animation-b{
+	top: 65px;
 	transition: all 0.4s linear;
 	transform: scale(0);
 }
 
 .popup.animation-c{
+	top: 65px;
 	transition: all 0.8s ease;
 	transform: translate3d(100%, 0, 0) skewX(-30deg);
     opacity: 0;
