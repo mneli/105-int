@@ -56,3 +56,10 @@
 		TODO : Take live exchange rate from an external api.
 	</p>
 </div>
+
+<div>
+	<h2>popupAnimation</h2>
+	<p>
+		A basic webpage with three different popup animation style
+	</p>
+</div>
