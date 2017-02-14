@@ -16,5 +16,7 @@ npm-debug.log
 .vscode
 prepros*.config
 ressources
+config.json
+config.js
 
 
